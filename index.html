@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Let's go grocery shopping!</title>
+    <style>
+        body {
+            margin: 50px;
+            border: 4px solid #7d8de6;
+            padding: 20px;
+            background: #fff;
+            color: #7d8de6;
+            font-family: Helvetica, sans-serif;
+            font-weight: normal;
+        }
+        div.basket {
+            background: #fff;
+            margin: 20px 0;
+            color: #7d8de6;
+            padding: 10px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            margin: 20px 0;
+        }
+        h2, h3 {
+            color: #7d8de6;
+        }
+        h1, h4 {
+            color: #FF2A93;
+        }
+        h4, h3.statusMsg {
+            font-size: 30px;
+        }
+        h2 {
+            border-bottom: 4px solid #7d8de6;
+            padding: 0 0 10px 0;
+        }
+        div.budgetContainer {
+            background: black;
+            padding: 20px;
+        }
+        input[type="text"] {
+            outline: 4px solid #FF2A93;
+            border: 0;
+            padding: 10px;
+            font-size: 20px;
+            color: #7d8de6;
+        }
+        button {
+            background: #fff;
+            border: 4px solid #FF2A93;
+            font-family: Helvetica, sans-serif;
+            padding: 10px;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        ul.cartList li {
+            color: #7d8de6;
+        }
+        button.removeItems {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Let's go grocery shopping!</h1>
+    <h2>Click on the buttons below to add them to your cart.</h2>
+    <div class="budgetContainer">
+        <h3>Budget:</h3>
+        <h4 class="budget"></h4>
+    </div>
+    <form action="">
+        <ul>
+            <h3>Vegetables</h3>
+            <button data-price="0.25" data-item="Cucumbers" data-quantity="100">Cucumbers 🥒 0.25/ea</button>
+            <button data-price="0.50" data-item="Eggplant" data-quantity="100">Eggplant 🍆 0.50/ea</button>
+            <h3>Fruit</h3>
+            <button data-price="0.95" data-item="Pineapples" data-quantity="100">Pineapples 🍍 0.95/ea</button>
+            <button data-price="0.60" data-item="Tomatoes" data-quantity="100">Tomatoes 🍅 0.60/ea</button>
+        </ul>
+    </form>
+    <div class="cart">
+        <h3>See your cart items appear below:</h3>
+        <ul class="cartList">
+            <li></li>
+        </ul>
+        <div class="total">
+            <h3>👉🏼 Total: <span></span></h3>
+            <h3 class="statusMsg"></h3>
+            <button class="removeItems">Remove Items</button>
+        </div>
+        <div class="arrayList"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script>
+        var itemNameArray = [];
+        var itemPriceArray = [];
+        var itemName;
+        var itemPrice;
+        var sum;
+		//document ready
+        $(function() {
+            var budget = prompt(`What's your budget?`);
+            $('h4.budget').text('$' + budget);
+            $('button').on('click', function(e) {
+                //prevent submit button from refreshing the page
+                e.preventDefault();
+                // var itemName = $(this).data('item').toLowerCase();
+                var itemName = $(this).data('item');
+                var itemQuantity = prompt('Enter a quantity');
+                // itemQuantity = $(this).data('quantity') - itemQuantity;
+                console.log(itemQuantity);
+                itemPrice = $(this).data('price');
+                //convert string to a number
+                itemPrice = Number(itemPrice);
+                itemPrice += itemPrice * itemQuantity;
+                var total = 0;
+                total += total + itemPrice;
+                //let's push itemNames and itemPrices into an array
+                itemNameArray.push(itemName);
+                itemPriceArray.push(itemPrice);
+                if(itemQuantity >= $(this).data('quantity')) {
+                    alert('You have purchased too many! Try again.');
+                    itemNameArray.pop(itemName);
+                } else {
+                    alert('Added to cart!');
+                }
+                var sum = itemPriceArray.reduce(function(a, b) {
+                    return a + b;
+                });
+                $('div.total span').text('$'+sum);
+                if(sum >= budget) {
+                    $('h3.statusMsg').text('You are over budget! Please remove some items.');
+                    $('h3.statusMsg').css('color', '#FC3C2D');
+                    $('button.removeItems').css('display', 'block')
+                } else {
+                    $('h3.statusMsg').text('You are under budget!');
+                    $('h3.statusMsg').css('color', '#00B28B');
+                }
+                $('ul.cartList').append('<li>You have ' + itemQuantity + ' ' + itemName + '(s). It will cost you ' + '$'+itemPrice + '.' + '</li>');
+            });//button onclick event
+        });//end document ready
+    </script>
+</body>
+</html>

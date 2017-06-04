@@ -1,0 +1,18 @@
+//you are going grocery shopping
+//there is a selection of items in a store
+//you have a budget of $150 though
+//you select items into a basket
+//click on a checkbox
+//clicked items are added to the basket
+//maybe toggle to add/remove?
+//items are placed into a basket
+//if you are at $150 or under $150, then you can buy the food in the basket
+//if you are over $150, you have to remove items
+
+Required:
+Control Flow (if statements)
+Types - numbers strings, booleans
+Built in functions - alert, prompt
+Custom Functions
+Objects
+Arrays
