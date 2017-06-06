@@ -60,6 +60,7 @@
             color: black;
             font-weight: bold;
             font-size: 18px;
+            margin: 10px 0;
         }
         ul.cartList li {
             color: #7d8de6;
@@ -71,19 +72,31 @@
 </head>
 <body>
     <h1>Let's go grocery shopping!</h1>
-    <h2>Click on the buttons below to add them to your cart.</h2>
     <div class="budgetContainer">
-        <h3>Budget:</h3>
+        <h3>Your budget is:</h3>
         <h4 class="budget"></h4>
     </div>
+    <h2>Click on the buttons below to add them to your cart.</h2>
     <form action="">
         <ul>
             <h3>Vegetables</h3>
             <button data-price="0.25" data-item="Cucumbers" data-quantity="100">Cucumbers 🥒 0.25/ea</button>
             <button data-price="0.50" data-item="Eggplant" data-quantity="100">Eggplant 🍆 0.50/ea</button>
+            <button data-price="0.50" data-item="Mushrooms" data-quantity="100">Mushrooms 🍄 0.50/ea</button>
+            <button data-price="0.50" data-item="Eggplant" data-quantity="100">Eggplant 🍆 0.50/ea</button>
+            <button data-price="0.50" data-item="Eggplant" data-quantity="100">Eggplant 🍆 0.50/ea</button>
             <h3>Fruit</h3>
             <button data-price="0.95" data-item="Pineapples" data-quantity="100">Pineapples 🍍 0.95/ea</button>
             <button data-price="0.60" data-item="Tomatoes" data-quantity="100">Tomatoes 🍅 0.60/ea</button>
+            <button data-price="0.60" data-item="Melon" data-quantity="100">Melon 🍅 0.60/ea</button>
+            <button data-price="0.60" data-item="Oranges" data-quantity="100">Oranges 🍅 0.60/ea</button>
+            <button data-price="0.60" data-item="Apples" data-quantity="100">Apples 🍅 0.60/ea</button>
+            <button data-price="0.60" data-item="Grapes" data-quantity="100">Grapes 🍇 0.60/ea</button>
+            <button data-price="0.60" data-item="Apples" data-quantity="100">Apples 🍅 0.60/ea</button>
+            <button data-price="0.60" data-item="Apples" data-quantity="100">Apples 🍅 0.60/ea</button>
+            <h3>Other</h3>
+            <button data-price="0.95" data-item="Coffee" data-quantity="100">Coffee ☕️ 0.95/ea</button>
+            <button data-price="0.95" data-item="Tea" data-quantity="100">Tea 🍵 0.95/ea</button>
         </ul>
     </form>
     <div class="cart">
@@ -107,7 +120,7 @@
         var sum;
 		//document ready
         $(function() {
-            var budget = prompt(`What's your budget?`);
+            // var budget = prompt(`What's your budget?`);
             $('h4.budget').text('$' + budget);
             $('button').on('click', function(e) {
                 //prevent submit button from refreshing the page
