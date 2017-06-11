@@ -3,84 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Let's go grocery shopping!</title>
-    <style>
-        article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
-    input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
-
-    .clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
-
-    *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-        body {
-            margin: 50px;
-            border: 4px solid #7d8de6;
-            padding: 20px;
-            background: #fff;
-            color: #7d8de6;
-            font-family: Helvetica, sans-serif;
-            font-weight: normal;
-        }
-        div.foodItems, div.cart {
-            float: left;
-            padding: 1% 1% 1% 0;
-        }
-        div.foodItems {
-            width: 59%;
-        }
-        div.cart {
-            background: #eee;
-            color: #7d8de6;
-            width: 39%;
-        }
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        li {
-            margin: 20px 0;
-        }
-        h2, h3 {
-            color: #7d8de6;
-        }
-        h1, h4 {
-            color: #FF2A93;
-        }
-        h4, h3.statusMsg {
-            font-size: 30px;
-        }
-        h2 {
-            border-bottom: 4px solid #7d8de6;
-            padding: 0 0 10px 0;
-        }
-        div.budgetContainer {
-            background: black;
-            padding: 20px;
-        }
-        input[type="text"] {
-            outline: 4px solid #FF2A93;
-            border: 0;
-            padding: 10px;
-            font-size: 20px;
-            color: #7d8de6;
-        }
-        button {
-            background: #fff;
-            border: 4px solid #FF2A93;
-            font-family: Helvetica, sans-serif;
-            padding: 10px;
-            color: black;
-            font-weight: bold;
-            font-size: 18px;
-            margin: 4px 4px 4px 0;
-        }
-        ul.cartList li {
-            color: #7d8de6;
-        }
-        button.removeItems {
-            display: none;
-        }
-    </style>
 </head>
 <body class="clearfix">
     <h1>Let's go grocery shopping!</h1>
@@ -89,14 +16,14 @@
             <h3>Your budget is:</h3>
             <h4 class="budget"></h4>
         </div>
-        <h2>Click on the buttons below to add them to your cart.</h2>
+        <h2>Click on the buttons below to add them to your&nbsp;cart.</h2>
         <form action="">
             <ul>
                 <h3>Vegetables</h3>
-                <button data-price="0.25" data-item="Cucumbers" data-quantity="100">Cucumber 🥒 0.25/ea</button>
+                <button data-price="0.25" data-item="Cucumber" data-quantity="100">Cucumber 🥒 0.25/ea</button>
                 <button data-price="0.50" data-item="Eggplant" data-quantity="100">Eggplant 🍆 0.50/ea</button>
                 <button data-price="0.50" data-item="Mushroom" data-quantity="100">Mushroom 🍄 0.50/ea</button>
-                <button data-price="0.50" data-item="Sweet Potato" data-quantity="100">Sweet Potato 🍠 0.50/ea</button>
+                <button data-price="0.50" data-item="Sweet Potato" data-quantity="100">Sweet potato 🍠 0.50/ea</button>
                 <button data-price="0.50" data-item="Potato" data-quantity="100">Potato 🥔 0.50/ea</button>
                 <button data-price="0.50" data-item="Carrot" data-quantity="100">Carrot 🥕 0.50/ea</button>
                 <button data-price="0.50" data-item="Corn" data-quantity="100">Corn 🌽 0.50/ea</button>
@@ -126,15 +53,15 @@
                 <button data-price="0.95" data-item="Coffee" data-quantity="100">Coffee ☕️ 0.95/lbs</button>
                 <button data-price="2.30" data-item="Cup of coffee" data-quantity="100">Cup of coffee ☕️ 2.30/ea</button>
                 <button data-price="0.95" data-item="Tea" data-quantity="100">Tea 🍵 0.95/lbs</button>
-                <button data-price="2.30" data-item="Cup of coffee" data-quantity="100">Cup of tea 🍵 1.30/ea</button>
-                <button data-price="1.50" data-item="Lemonade" data-quantity="100">Beyonce Lemonade 🍋 1.50/ea</button>
+                <button data-price="2.30" data-item="Cup of tea" data-quantity="100">Cup of tea 🍵 1.30/ea</button>
+                <button data-price="1.50" data-item="Lemonade" data-quantity="100">Beyonce Lemonade 🍋⚾️ 1.50/ea</button>
                 <button data-price="2.50" data-item="Beer" data-quantity="100">Beer 🍺 2.50/bottle</button>
                 <button data-price="20.00" data-item="Wine" data-quantity="100">Wine 🍷 20.00/bottle</button>
                 <button data-price="50.00" data-item="Champagne" data-quantity="100">Champagne 🍾 50.00/ea</button>
                 <h3>Other/Prepared Foods</h3>
                 <button data-price="0.45" data-item="Peanut" data-quantity="100">Peanut 🥜 0.45/lbs</button>
                 <button data-price="0.95" data-item="Honey" data-quantity="100">Honey 🍯 0.95/lbs</button>
-                <button data-price="0.95" data-item="Loaf of bread" data-quantity="100">Loaf of bread 🍞 0.95/loaf</button>
+                <button data-price="0.95" data-item="Loaf of bread" data-quantity="100">Loaf of bread 🍞 0.95/ea</button>
                 <button data-price="0.95" data-item="French bread" data-quantity="100">French bread 🥖 0.95/ea</button>
                 <button data-price="0.35" data-item="Croissant" data-quantity="100">Croissant 🥐 0.35/ea</button>
                 <button data-price="4.25" data-item="Croissant" data-quantity="100">Pizza 🍕 4.25/ea</button>
@@ -144,6 +71,7 @@
                 <button data-price="2.75" data-item="Chicken hotdog" data-quantity="100">Chicken hotdog 🌭 2.75/ea</button>
                 <button data-price="2.75" data-item="Veggie hotdog" data-quantity="100">Veggie hotdog 🌭 2.75/ea</button>
                 <button data-price=4.10 data-item="Veggie Burger" data-quantity="100">Chicken burger 🍔 4.10/ea</button>
+                <button data-price=3.95 data-item="Veggie Burger" data-quantity="100">Turkey burger 🍔 3.95/ea</button>
                 <button data-price="4.10" data-item="Veggie Burger" data-quantity="100">Veggie burger 🍔 4.10/ea</button>
                 <button data-price="2.65" data-item="Burriot" data-quantity="100">Burrito 🌯 2.65/lbs</button>
                 <button data-price="5.75" data-item="Falafel" data-quantity="100">Falafel 🥙 5.75/ea</button>
@@ -151,7 +79,7 @@
                 <button data-price="2.15" data-item="Pancakes" data-quantity="100">Pancakes 🥞 2.15/ea</button>
                 <button data-price="0.55" data-item="Pancakes" data-quantity="100">Popcorn 🍿 0.55/lbs</button>
                 <button data-price="0.40" data-item="Pancakes" data-quantity="100">Fries 🍟 0.40/lbs</button>
-                <button data-price="0.95" data-item="0.15" data-quantity="100">Pasta noodles 🍝 0.15/lbs</button>
+                <button data-price="0.15" data-item="Pasta noodles" data-quantity="100">Pasta noodles 🍝 0.15/lbs</button>
                 <button data-price="0.60" data-item="Ramen noodles" data-quantity="100">Ramen noodles 🍜 0.60/lbs</button>
                 <button data-price="1.75" data-item="Sushi" data-quantity="100">Sushi 🍣 1.75/ea</button>
                 <button data-price="7.75" data-item="Sushi bento box" data-quantity="100">Sushi bento box 🍱 7.75/ea</button>
@@ -159,7 +87,6 @@
                 <button data-price="1.00" data-item="Rice" data-quantity="100">Rice 🍚 1.00/lbs</button>
                 <button data-price="4.00" data-item="Vanilla JS icecream" data-quantity="100">Vanilla JS icecream 🍦 4.00/ea</button>
                 <button data-price="2.00" data-item="Slice of cake" data-quantity="100">Slice of cake 🍰 2.00/ea</button>
-                <!-- <button data-price="4.00" data-item="Chocolate JS icecream" data-quantity="100">Chocolate JS icecream 💩 4.00/ea</button> -->
             </ul>
         </form>
     </div>
@@ -169,61 +96,13 @@
             <li></li>
         </ul>
         <div class="total">
-            <h3>👉🏼 Total: <span></span></h3>
+            <h3><span style="color:#272727;">👉🏼 Total:</span></h3>
             <h3 class="statusMsg"></h3>
-            <button class="removeItems">Remove Items</button>
+            <button class="checkout">Checkout</button>
         </div>
         <div class="arrayList"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script>
-        var itemNameArray = [];
-        var itemPriceArray = [];
-        var itemName;
-        var itemPrice;
-        var sum;
-		//document ready
-        $(function() {
-            // var budget = prompt(`What's your budget?`);
-            $('h4.budget').text('$' + budget);
-            $('button').on('click', function(e) {
-                //prevent submit button from refreshing the page
-                e.preventDefault();
-                // var itemName = $(this).data('item').toLowerCase();
-                var itemName = $(this).data('item');
-                var itemQuantity = prompt('Enter a quantity');
-                // itemQuantity = $(this).data('quantity') - itemQuantity;
-                console.log(itemQuantity);
-                itemPrice = $(this).data('price');
-                //convert string to a number
-                itemPrice = Number(itemPrice);
-                itemPrice += itemPrice * itemQuantity;
-                var total = 0;
-                total += total + itemPrice;
-                //let's push itemNames and itemPrices into an array
-                itemNameArray.push(itemName);
-                itemPriceArray.push(itemPrice);
-                if(itemQuantity >= $(this).data('quantity')) {
-                    alert('You have purchased too many! Try again.');
-                    itemNameArray.pop(itemName);
-                } else {
-                    alert('Added to cart!');
-                }
-                var sum = itemPriceArray.reduce(function(a, b) {
-                    return a + b;
-                });
-                $('div.total span').text('$'+sum);
-                if(sum >= budget) {
-                    $('h3.statusMsg').text('You are over budget! Please remove some items.');
-                    $('h3.statusMsg').css('color', '#FC3C2D');
-                    $('button.removeItems').css('display', 'block')
-                } else {
-                    $('h3.statusMsg').text('You are under budget!');
-                    $('h3.statusMsg').css('color', '#00B28B');
-                }
-                $('ul.cartList').append('<li>You have ' + itemQuantity + ' ' + itemName + '(s). It will cost you ' + '$'+itemPrice + '.' + '</li>');
-            });//button onclick event
-        });//end document ready
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
